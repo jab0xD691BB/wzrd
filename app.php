@@ -7,6 +7,7 @@ use MyApp\Socket;
 
 //require 'C:\xampp\htdocs\wzrd\vendor\autoload.php';
 require __DIR__ . '/vendor/autoload.php';
+require './app/socket.php';
 
 
 
