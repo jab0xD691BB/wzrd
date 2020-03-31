@@ -1,0 +1,556 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    background: rgb(0,1,24);
+    background: linear-gradient(0deg, rgba(0,1,24,1) 0%, rgba(0,0,0,1) 76%, rgba(43,17,57,1) 100%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: rgb(67, 93, 92);
+}
+
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: 20% 60% 20%;
+    height: 100%;
+    overflow: hidden;
+    min-height: 450px;
+}
+
+#onlinePlayers{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 1;
+    grid-row-end: 1;
+    border-right: 1px solid rgb(67, 93, 92);
+    border-bottom: 1px solid rgb(67, 93, 92);
+    overflow: auto;
+}
+
+#onlineTxt{
+    border-bottom: 1px solid rgb(67, 93, 92);
+}
+
+.onlinePlayersTxt{
+    color: rgb(134, 255, 134);
+    font-size: 1em;
+    text-shadow: 1px 1px 5px black;
+}
+
+
+#gameArea{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: 20% 10% 10% 10% 10% 10% 10% 20%;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column-end: 2;
+    grid-row-end: 2;
+    box-shadow: 2px 2px 20px rgba(245, 245, 245, 0.267);
+
+
+}
+
+#trumpfCardDiv{
+    display: flex;
+    justify-content: center;
+    grid-column-start: 2;
+    grid-row-start: 4;
+    grid-column-end: 2;
+    grid-row-end: 6;
+    align-self: center;
+}
+
+#trumpfCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 50px;
+    margin: 5% 0.5%;
+    border: 1px solid black;
+    border-radius: 10%;
+    font-size: x-large;
+    font-weight: bold;
+    transition: linear 1s;
+}
+
+.sitPlayer{
+    color: white;
+}
+
+#sitz1,#sitz2,#sitz3,#sitz4,#sitz5,#sitz6{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.102);
+    align-self: center;
+    justify-self: center;
+}
+
+
+#sitz1{
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-column-end: 2;
+    grid-row-end: 5;
+
+}
+#sitz2{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column-end: 2;
+    grid-row-end: 4;
+
+}
+#sitz3{
+    grid-column-start: 3;
+    grid-row-start: 3;
+    grid-column-end: 3;
+    grid-row-end: 5;
+
+}
+#sitz4{
+    grid-column-start: 3;
+    grid-row-start: 5;
+    grid-column-end: 3;
+    grid-row-end: 7;
+
+}
+#sitz5{
+    grid-column-start: 2;
+    grid-row-start: 6;
+    grid-column-end: 2;
+    grid-row-end: 8;
+
+}
+#sitz6{
+    grid-column-start: 1;
+    grid-row-start: 5;
+    grid-column-end: 1;
+    grid-row-end: 7;
+
+}
+#playedCard{
+    display: flex;
+    justify-content: center;
+    grid-column-start: 1;
+    grid-row-start: 8;
+    grid-column-end: 4;
+    grid-row-end: 9;
+}
+
+#playedCard .playedCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 40px;
+    border: 1px solid black;
+    border-radius: 10%;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+
+
+.cardAndName{
+    width: 45px;
+    margin-top: 1%;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.cardAndNameName{
+   
+}
+
+#stichArea{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 1;
+    display: none;
+    height: 98%;
+    background-color: rgba(0, 0, 0, 0.143);
+    border-radius: 3%;
+    text-align: center;
+    align-self: center;
+    font-size: larger;
+    /*border: 1px solid pink;*/
+}
+
+.stichGrpBtn{
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stichBtn{
+    width: 15%;
+    height: 70%;
+    color: rgb(67, 93, 92);
+}
+
+#stichArea input{
+    width: 90%;
+
+}
+
+.pointsStich{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.stichPoints{
+}
+
+input[type=text], input[type=text]:focus{
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+button, button:focus, input[type=submit]{
+    border: none;
+    outline: none;
+    background-color: rgba(42, 73, 69, 0.404);
+}
+
+button:hover, input[type=submit]:hover{
+    background-color: gray;
+}
+
+#chat{
+    display: grid;
+    grid-template-rows: 5% 85% 5% 5%;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-column-end: 1;
+    grid-row-end: 2;
+    height: 100%;
+    word-wrap: break-word;
+    border-right: 1px solid rgb(67, 93, 92);
+}
+
+#messages{
+    font-weight: 600;
+}
+
+#chatTitel{
+    align-content: center;
+}
+
+.chatMe{
+    background-color: rgba(0, 78, 0, 0.486);
+    border-radius: 10%;
+    margin-bottom: 0.25em;
+}
+
+.chatAdmin{
+    background-color: rgba(255, 0, 0, 0.39);
+    border-radius: 10%;
+    margin-bottom: 0.25em;
+
+}
+
+#messages{
+    overflow: auto;
+}
+
+#handCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-column-end: 4;
+    grid-row-end: 4;
+    border: 1px solid rgb(67, 93, 92);
+    background-color: rgba(0, 0, 0, 0.178);
+}
+
+.handCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1%;
+    height: 100px;
+    width: 50px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10%;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.handCard:hover{
+    height: 105px;
+    width: 55px;
+}
+
+.playCard{
+    border: 4px solid rgb(0, 255, 0);
+}
+
+#topMid{
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-rows: 40% 20% 40%;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 1;
+    border-bottom: 1px solid rgb(67, 93, 92);
+}
+
+#topMid h1{
+    height: 100%;
+    width: 100%;
+    font-size: 4em;
+    align-self: center;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    color: rgba(63, 33, 112, 0.561);
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.267);
+}
+
+#topMid #join{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    width: 50%;
+}
+
+#topMid #leave{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 50%;
+}
+
+
+#topRight{
+    border-left: 1px solid rgb(67, 93, 92);
+    border-bottom: 1px solid rgb(67, 93, 92);
+}
+
+#points{
+    display: grid;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+    border-left: 1px solid rgb(67, 93, 92);
+
+    font-size: 0.8em;
+    grid-template-columns: 10% 15% 15% 15% 15% 15% 15%;
+    grid-template-rows:  4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54% 4.54%;
+}
+
+#pointsTxt{
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+#pp1, #pp2, #pp3, #pp4, #pp5, #pp6, #pointsRound{
+    border-bottom: 1px solid rgb(67, 93, 92);
+}
+
+#pointsRound{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+#pp1{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+#pp2{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+#pp3{
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+#pp4{
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+#pp5{
+    grid-column-start: 6;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+#pp6{
+    grid-column-start: 7;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.giverCard{
+    width: 25px;
+    height: 40px;
+    background-color: rgba(63, 33, 112, 0.561);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6%;
+}
+
+.stichTxt{
+    color: pink;
+}
+
+@media (max-width: 575px) {
+    body{
+        position: relative;
+    }
+    #gameArea{
+        grid-column-start: 1;
+        grid-row-start: 2;
+        grid-column-end: 4;
+        grid-row-end: 2;
+        }
+
+        #points{
+            display: none;
+        }
+
+        #chat{
+            grid-template-rows: 5% 65% 15% 15%;
+            grid-column-start: 3;
+            grid-row-start: 1;
+            grid-column-end: 3;
+            grid-row-end: 1;
+            font-size: 0.6em;
+            border-left: 1px solid rgb(67, 93, 92);
+            
+        }
+
+        #titelChat{
+            font-size: 0.5em;
+        }
+
+
+        #onlinePlayers{
+            font-size: 0.5em;
+        }
+
+        #topMid h1{
+            font-size: 2em;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.157);
+        }
+
+        #topMid #join{
+            
+        }
+
+        .handCard{
+            height: 80px;
+            width: 30px;
+        }
+
+        .sitze{
+            width: 75% !important;
+            height: 75% !important;
+            justify-self: center;
+            align-self: center;
+        }
+
+        #trumpfCard{
+            height: 60px;
+            width: 30px;
+            
+        }
+
+        .stichTxt{
+            display: none;
+        }
+
+
+        .stichGrpBtn{
+            height: 49%;
+        }
+
+        .cardAndName{
+            font-size: 0.7em;
+            margin-top: 0%;
+        }
+
+        .playedCards{
+            height: 45px !important;
+            width: 30px !important;
+        }
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { 
+   
+   
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    
+ }
+
+
+.testAnim{
+    position: absolute;
+    transition: left 1s ease-out, top 1s ease-out;
+}
+
+.playTestAnim{
+    position: absolute;
+    transition: left 1s ease-out, top 1s ease-out;
+}
