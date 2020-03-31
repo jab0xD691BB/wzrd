@@ -5,7 +5,8 @@ use Ratchet\Http\HttpServer;
 use Ratchet\WebSocket\WsServer;
 use MyApp\Socket;
 
-require 'C:\xampp\htdocs\wzrd\vendor\autoload.php';
+//require 'C:\xampp\htdocs\wzrd\vendor\autoload.php';
+require __DIR__ . '\vendor\autoload.php';
 
 
 

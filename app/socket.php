@@ -2,9 +2,11 @@
 
 namespace MyApp;
 
-require 'C:\xampp\htdocs\wzrd\vendor\autoload.php';
-require_once 'C:\xampp\htdocs\wzrd\classes.php';
+//require 'C:\xampp\htdocs\wzrd\vendor\autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
+//require_once 'C:\xampp\htdocs\wzrd\classes.php';
+require_once dirname(__FILE__) . '/../classes.php';
 use Cards;
 use Game;
 use lobby;
